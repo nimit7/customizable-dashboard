@@ -1,0 +1,325 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"
+            integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.plot.ly/plotly-2.34.0.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+            charset="utf-8"></script>
+        <script src="https://cdn.datatables.net/2.1.4/css/dataTables.bootstrap5.css" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+            charset="utf-8"></script>
+        <script src="https://cdn.datatables.net/2.1.4/js/dataTables.js" charset="utf-8"></script>
+        <script src="https://cdn.datatables.net/2.1.4/js/dataTables.bootstrap5.js" charset="utf-8"></script> -->
+        <style>
+            table,
+            tr,
+            th,
+            td {
+                padding: 3px !important;
+                text-align: right !important;
+            }
+            .border-red {
+                border: 1px solid red !important;
+            }
+            .border-3 {
+                border-width: 3px !important;
+            }
+        </style>
+        <script>
+            function getColWidth(pw, cw) {
+                cw = cw > pw ? pw : cw;
+                cw = Math.round(cw * 12.0 / pw);
+                return cw;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class=" pt-3 pb-3 d-flex justify-content-center">
+            <div id="graphcontainer" style="width: 1080px;" class="row">
+            </div>
+        </div>
+    </body>
+    <script>
+        pinned_objects=[{"object_type": "dashboard-info", "object_name": "Information", "object_data": {"name": "C", "description": "", "group": "Multi-Domain", "user_config": {"view_page_borders": true, "view_panel_highlighter": true, "page_orientation_portrait": true, "page_style": {"min-height": "1550px", "width": "1080px"}, "page_className": "shadow-lg p-0 bg-body rounded"}}}, {"object_type": "panel", "object_width": "12", "object_height": "0", "object_header_css": "", "object_header": "", "object_border": "0", "object_data": [{"object_type": "text", "object_width": "12", "object_height": "100", "object_header": "", "object_border": "1", "object_data": {"title": "Color", "subtitle": "Demo"}, "object_style": {"text_align": "Center", "title_css": "h1 text-success", "subtitle_css": "h4 text-danger", "card_css": "bg-primary"}}], "object_query": {"title": "Color", "subtitle": "Demo", "text_panel_width": 12, "text_width_value": 12, "text_height_value": 100, "text_align": "Center", "title_css": "h1 text-success", "subtitle_css": "h4 text-danger", "card_css": "bg-primary"}, "object_name": "Label-1"}]
+        for (let i = 0; i < pinned_objects.length; i++) {
+            var panel_obj = pinned_objects[i]
+            if (panel_obj["object_type"] == "panel") {
+                var panel_data = panel_obj['object_data']
+                panel_header = panel_obj["object_header"] ? panel_obj["object_header"] : ""
+                panel_header_css = panel_obj["object_header_css"] ? panel_obj["object_header_css"] : ""
+                panel_border = panel_obj["object_border"] ? panel_obj["object_border"] : "0"
+                var iPanel = document.createElement('div');
+                var panel_width = parseInt(panel_obj['object_width'])
+                iPanel.className = 'col-' + panel_width.toString() + " p-" + panel_header_css.toString()
+                page_break=""
+                if (panel_obj['object_style'])
+                {
+                    page_break = panel_obj['object_style']["page_break"] ? panel_obj['object_style']["page_break"] + ":" + "always " : ""
+                    
+                }                
+                iPanel.style = "break-inside:avoid;"+page_break
+                iPanelCard = document.createElement('div');
+                iPanelCard.className = "card p-0 bg-transparent  border-" + panel_border.toString()
+                iPanelCardBody = document.createElement('div');
+                iPanelCardBody.className = "card-body p-0 "
+
+                iPanelHeader = document.createElement('div');
+                iPanelHeader.className = "h5 p-2"
+                iPanelHeader.style = "color:#043365"
+                iPanelHeader.innerHTML = panel_header
+
+                var iPanelRow = document.createElement('div');
+                iPanelRow.className = 'row pr-3 pl-3'
+                var sub_obj_type = ""
+                for (let j = 0; j < panel_data.length; j++) {
+                    card_obj = panel_data[j]
+                    sub_obj_type = card_obj["object_type"]
+                    object_style = card_obj['object_style'] ? card_obj['object_style'] : {}
+                    var card_width = getColWidth(panel_width, parseInt(card_obj['object_width']))
+                    var card_height = parseInt(card_obj['object_height'])
+                    item_header = card_obj["object_header"] ? card_obj["object_header"] : ""
+                    item_border = card_obj["object_border"] ? card_obj["object_border"] : "1"
+                    if (sub_obj_type == "card") {
+                        var card_data = card_obj['object_data']
+                        filter_values = card_data["filter_values"]
+                        filters = card_data["filters"]
+                        card_height = (card_height).toString() + "px"
+
+                        changetype = object_style["change_type"] ? object_style["change_type"] : "Percentage"
+                        nodenamesuffix = object_style["nodename_suffix"] ? object_style["nodename_suffix"] : ""
+                        metricnamesuffix = object_style["metricname_suffix"] ? object_style["metricname_suffix"] : ""
+                        changesuffix = object_style["change_suffix"] ? object_style["change_suffix"] : "%"
+                        changeprefix = object_style["change_prefix"] ? object_style["change_prefix"] : ""
+                        metricprefix = object_style["metric_prefix"] ? object_style["metric_prefix"] : ""
+                        metricsuffix = object_style["metric_suffix"] ? object_style["metric_suffix"] : ""
+                        cardtemplate = object_style["card_template"] ? object_style["card_template"] : "Vertical-Center"
+                        viewoptions = object_style["view_options"] ? object_style["view_options"] : ['Node Name', 'Metric Name', "Metric Value", 'Cohort Name', 'Segment Name', 'Change %']
+
+                        text_align = cardtemplate.split("-")[1].toString().toLowerCase()
+                        node_name = (viewoptions.indexOf("Node Name") > -1) ? card_data["node_name"] : ""
+                        node_name = (nodenamesuffix === "") ? node_name : node_name + nodenamesuffix
+
+                        metric_name = (viewoptions.indexOf("Metric Name") > -1) ? card_data["metric_name"] : ""
+                        metric_name = (metricnamesuffix === "") ? metric_name : metric_name + metricnamesuffix
+
+                        metric_value = (viewoptions.indexOf("Metric Value") > -1) ? card_data["metric_value"] : ""
+                        metric_value = (metricprefix === "") ? metric_value : metricprefix + metric_value
+                        metric_value = (metricsuffix === "") ? metric_value : metric_value + metricsuffix
+                        metric_change_c = card_data['metric_change_c']
+                        change_s = (viewoptions.indexOf("Change %") > -1) ? card_data["metric_change_s"] : ""
+                        cohort_name = (viewoptions.indexOf("Cohort Name") > -1) ? card_data["cohort_name"] : ""
+                        segment_name = (viewoptions.indexOf("Segment Name") > -1) ? card_data["segment_name"] : ""
+                        tree_name = (viewoptions.indexOf("Tree Name") > -1) ? card_data["tree_name"] : ""
+                        first_filter= (viewoptions.indexOf("Time") > -1) ? filter_values[0] : ""
+
+                        var iCols = document.createElement('div');
+                        iCols.className = 'col-' + card_width.toString() + ' p-1'
+                        var iCard = document.createElement('div');
+                        iCard.className = "card p-1 border-" + item_border.toString()
+                        iCard.style = "height:" + card_height;
+                        var iCardHeader = document.createElement('div');
+                        iCardHeader.className = "card-header text-" + text_align + " p-0"
+                        iCardHeader.style = "background:white;border:None"
+                        header_data = ``
+                        header_data += `<div class="color:#043365" >`
+                        if (item_header != "") { header_data += ` <h5 class="text-secondary">` + item_header + `</h5>` }
+                        header_data += ` <h5 class="text-secondary">` + node_name + `</h5>`
+                        header_data += ` <h5 >` + cohort_name + `</h5>`
+                        header_data += ` <div class="text-success" >` + segment_name + `</div>`
+                        header_data += `</div>`
+                        iCardHeader.innerHTML = header_data
+                        var iCardBody = document.createElement('div');
+                        iCardBody.className = "card-body d-flex align-items-center p-1"
+                        var iData = document.createElement('div');
+                        iData.id = 'obj_content_' + j
+                        iData.className = "w-100 text-" + text_align
+                        card_html = `<h6 style="text-align: ` + text_align + `" class="card-subtitle">` + metric_name + `</h6>`
+                        if (first_filter != "") {
+                            card_html += `<small style="text-align: ` + text_align + `;" class="` + metric_change_c + `">` + first_filter + `</small>`
+                        }
+                        if (cardtemplate.split("-")[0].toString().toLowerCase() == "horizontal") {
+    
+                            card_html += `<h2 style="text-align: ` + text_align + `;color:#043365" class="card-text">` + metric_value + ``
+                            card_html += `<small style="text-align: ` + text_align + `;" class="h6 ` + metric_change_c + `">` + change_s + `</small></h2>`
+                        }
+                        else {
+                            card_html += `<h2 style="text-align: ` + text_align + `;color:#043365" class="card-text">` + metric_value + `</h2>`
+                            card_html += `<h6 style="text-align: ` + text_align + `;" class="h6 ` + metric_change_c + `">` + change_s + `</h6>`
+                        }
+                        iData.innerHTML = card_html
+                        var iCardFooter = document.createElement('div');
+                        iCardFooter.className = "card-footer text-" + text_align + " p-0 "
+                        iCardFooter.style = "background:white;border:None"
+                        footer_data = ``
+                        // if (filter_values[0] != "") {
+                        //     footer_data += `<div class="badge rounded-pill text-bg-light text-secondary" > ` + filters[0] + ": " + filter_values[0] + `</div>`
+                        // }
+                        if (filter_values[1] != "") {
+                            footer_data += `<div class="badge rounded-pill text-bg-light text-secondary" > ` + filters[1] + ": " + filter_values[1] + `</div>`
+                        }
+                        if (filter_values[2] != "") {
+                            footer_data += `<div class="badge rounded-pill text-bg-light text-secondary" > ` + filters[2] + ": " + filter_values[2] + `</div>`
+                        }
+                        if (filter_values[3] != "") {
+                            footer_data += `<div class="badge rounded-pill text-bg-light text-secondary" > ` + filters[3] + ": " + filter_values[3] + `</div>`
+                        }
+                        if (tree_name != "") { footer_data += `<div style="color:#043365" ><i class="bi bi-diagram-3"></i> ` + tree_name + `</div>` }
+                        iCardFooter.innerHTML = footer_data
+                        iCardBody.appendChild(iData)
+                        iCard.appendChild(iCardHeader)
+                        iCard.appendChild(iCardBody)
+                        iCard.appendChild(iCardFooter)
+                        iCols.appendChild(iCard)
+                        iPanelRow.appendChild(iCols)
+                    }
+                    if (sub_obj_type == "text") {
+                        var card_data = card_obj['object_data']
+                        var card_width = getColWidth(panel_width, parseInt(card_obj['object_width']))
+                        var card_height = parseInt(card_obj['object_height'])
+                        card_height = (card_height).toString() + "px"
+                        var iCols = document.createElement('div');
+                        text_align = object_style["text_align"] ? object_style["text_align"] : "Center"
+                        
+                        
+                        text_align = text_align.toLowerCase()
+
+                        var title_css = object_style["title_css"]
+                        var subtitle_css = object_style["subtitle_css"]
+                        var card_css = object_style["card_css"]
+                        
+                        iCols.className = 'col-' + card_width.toString() + ' p-1'
+                        
+                        var iCard = document.createElement('div');
+                        iCard.className = "card p-0 border-" + item_border.toString()
+                        iCard.style = "height:" + card_height;
+                        var iCardBody = document.createElement('div');
+                        iCardBody.className = "card-body d-flex align-items-" + text_align + " p-1 " + card_css
+                        var iData = document.createElement('div');
+                        iData.id = 'obj_content_' + j
+                        iData.className = "w-100"
+                        card_html = `<h2 class="${title_css}" style="text-align: ` + text_align + `;color:#043365">` + card_data['title'] + `</h2>`
+                        card_html += `<h6 class="${subtitle_css}" style="text-align: ` + text_align + `;">` + card_data['subtitle'] + `</h6>`
+                        iData.innerHTML = card_html
+                        iCardBody.appendChild(iData)
+                        iCard.appendChild(iCardBody)
+                        iCols.appendChild(iCard)
+                        iPanelRow.appendChild(iCols)                  
+                       
+                    }
+                    if (sub_obj_type == "graph" || sub_obj_type == "graph3d") {
+                        var card_data = card_obj['object_data']
+                        var card_width = getColWidth(panel_width, parseInt(card_obj['object_width']))
+                        var card_height = parseInt(card_obj['object_height'])
+
+                        var iCols = document.createElement('div');
+                        iCols.className = 'col-' + card_width.toString() + ' p-1'
+                        var iCard = document.createElement('div');
+                        iCard.className = "card p-0 border-" + item_border.toString()
+                        var iCardBody = document.createElement('div');
+                        iCardBody.className = "card-body p-0"
+                        var iGraph = document.createElement('div');
+                        iGraph.id = 'graph' + i
+                        iGraph.className = 'h-auto w-100'
+                        iCardBody.appendChild(iGraph)
+                        iCard.appendChild(iCardBody)
+                        iCols.appendChild(iCard)
+                        iPanelRow.appendChild(iCols)
+                        if (panel_header != "") { iPanelCardBody.appendChild(iPanelHeader) }
+                        iPanelCardBody.appendChild(iPanelRow)
+                        iPanelCard.appendChild(iPanelCardBody)
+                        iPanel.appendChild(iPanelCard)
+                        document.getElementById('graphcontainer').appendChild(iPanel);
+                        gd = JSON.parse(card_data);
+                        gd['layout']['height'] = card_height
+                        Plotly.newPlot(iGraph.id, gd);
+                    }
+                    if (sub_obj_type == "table") {
+                        var card_data = card_obj['object_data']
+                        try {
+                            var card_width = getColWidth(panel_width, parseInt(card_obj['object_width']))
+                            var card_height = parseInt(card_obj['object_height'])
+                            var iCols = document.createElement('div');
+                            iCols.className = 'col-' + card_width.toString() + ' p-1'
+                            var iCard = document.createElement('div');
+                            iCard.className = "card p-0 border-" + item_border.toString()
+                            var iCardBody = document.createElement('div');
+                            iCardBody.className = "card-body p-0"
+                            var iTableWrapperDiv = document.createElement('div');
+                            iTableWrapperDiv.className = 'table-responsive'
+                            iTableWrapperDiv.style = "height:" + card_height.toString()
+                            html_data = card_data["html_data"] ? card_data["html_data"] : []
+                            var iTable
+                            if (html_data.length == 0) {
+                                iTable = document.createElement('table');
+                                iTable.id = 'table' + i
+                                iTable.className = 'table  table-bordered '
+                                iTableData = `<tr>`
+                                table_header = card_data["table_header"]
+                                table_data = card_data["table_data"]
+
+                                iTableData += `<tr>`
+                                for (let hi = 0; hi < table_header.length; hi++) {
+                                    iTableData += `<th class="p-1">` + table_header[hi] + `</th>`
+                                }
+                                iTableData += `</tr>`
+                                for (let ri = 0; ri < table_data.length; ri++) {
+                                    iTableData += `<tr>`
+                                    for (let ci = 0; ci < table_header.length; ci++) {
+                                        iTableData += `<td class="p-1">` + table_data[ri][ci] + `</td>`
+                                    }
+                                    iTableData += `</tr>`
+                                }
+                                iTable.innerHTML = iTableData
+                            }
+                            else {
+                                iTable = document.createElement('div');
+                                iTable.innerHTML = html_data.join("")
+                            }
+                            iTableWrapperDiv.appendChild(iTable)
+                            iTableWrapperDiv.appendChild(iTable)
+
+                            iCardBody.appendChild(iTableWrapperDiv)
+                            iCard.appendChild(iCardBody)
+                            iCols.appendChild(iCard)
+                            iPanelRow.appendChild(iCols)
+                            if (panel_header != "") { iPanelCardBody.appendChild(iPanelHeader) }
+                            iPanelCardBody.appendChild(iPanelRow)
+                            iPanelCard.appendChild(iPanelCardBody)
+                            iPanel.appendChild(iPanelCard)
+                            document.getElementById('graphcontainer').appendChild(iPanel);
+                        }
+                        catch (err) {
+
+                        }
+
+
+
+                    }
+                }
+                if (sub_obj_type != "graph") {
+                    if (panel_header != "") { iPanelCardBody.appendChild(iPanelHeader) }
+                    iPanelCardBody.appendChild(iPanelRow)
+                    iPanelCard.appendChild(iPanelCardBody)
+                    iPanel.appendChild(iPanelCard)
+                    document.getElementById('graphcontainer').appendChild(iPanel)
+                }
+
+            }
+        }
+        if (pinned_objects.length <= 1) {
+            document.getElementById('graphcontainer').innerHTML = "<div class='col-sm-12 h4 text-center text-danger'>No Dashboard Data Available !!!</div>";
+        }
+        document.getElementById('graphcontainer').style.width = pinned_objects[0]['object_data']['user_config']['page_style']['width']
+    </script>
+
+    </html>

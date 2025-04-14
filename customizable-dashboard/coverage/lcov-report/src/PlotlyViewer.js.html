@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/PlotlyViewer.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> PlotlyViewer.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/32</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/27</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/32</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect } from 'react'
+import PlotlyGraph from './components/plotly/PlotlyGraph';
+import Card from './components/plotly/Card';
+import TextCard from './components/plotly/Text';
+import TableCard from './components/plotly/TableCard';
+&nbsp;
+let pinnedObjects = <span class="cstat-no" title="statement not covered" >[{ "object_type": "dashboard-info", "object_name": "Information", "object_data": { "name": "test", "description": "", "group": "Multi-Domain", "user_config": { "view_page_borders": true, "view_panel_highlighter": true, "page_orientation_portrait": true, "page_style": { "min-height": "1550px", "width": "1080px" }, "page_className": "shadow-lg p-0 bg-body rounded" } } }, { "object_type": "panel", "object_width": "12", "object_height": "0", "object_padding": "0", "object_header": "", "object_border": "0", "object_data": [{ "object_type": "text", "object_width": "12", "object_height": "100", "object_header": "", "object_border": "1", "object_data": { "title": "Title", "subtitle": "Sub-Title" }, "object_style": { "text_align": "Center", "page_break": "" } }], "object_query": { "title": "Title", "subtitle": "Sub-Title", "panel_width_value": 12, "text_width_value": 12, "text_height_value": 100, "text_align": "Center" }, "object_name": "Label-1" }, { "object_type": "panel", "object_width": "12", "object_height": "0", "object_padding": "0", "object_header": "", "object_border": "0", "object_data": [{ "object_type": "card", "object_width": "3", "object_height": "200", "object_header": "", "object_border": "1", "object_style": { "view_options": ["Node Name", "Metric Name", "Metric Value", "Cohort Name", "Segment Name", "Change %", "Time"], "nodename_suffix": "", "metricname_suffix": "", "metric_prefix": "", "metric_suffix": "", "change_type": "Percentage", "difference_type": "VsPrev", "change_prefix": "", "change_suffix": "%", "time_format": "", "card_template": "Vertical-Center" }, "object_data": { "metric_name": "Roll Rate", "metric_value": "13.67", "metric_change": "37.58", "metric_change_i": "\u25b2", "metric_change_c": "text-secondary", "metric_change_v": "3.73", "metric_change_s": "\u25b237.58%", "node_name": "Auto Loans", "tree_name": "Auto Loans - Collections 2022 - 24", "cohort_name": "", "segment_name": "", "filters": ["Month", "DaysPastDue", "Filter3", "Filter4"], "filter_values": ["2023-06", [], [], []] } }], "object_query": { "kpitreeid": 741, "kpitype": "Aggregations", "cohortname": [], "searchnodes": [], "searchmetrics": [], "filter1_value": "", "filter2_value": [], "filter3_value": [], "filter4_value": [], "summary_func": "Avg", "weight_metric": "", "panel_width_value": 12, "card_width_value": 3, "card_height_value": 200, "view_options": ["Node Name", "Metric Name", "Metric Value", "Cohort Name", "Segment Name", "Change %", "Time"], "nodenamesuffix": "", "metricnamesuffix": "", "metricprefix": "", "metricsuffix": "", "changetype": "Percentage", "difftype": "VsPrev", "changeprefix": "", "changesuffix": "%", "timeformat": "", "cardtemplate": "Vertical-Center", "datasource": "" }, "object_name": "KPICard-1" }, { "object_type": "panel", "object_width": "12", "object_height": "0", "object_header": "", "object_padding": "0", "object_border": "0", "object_data": [{ "object_type": "graph", "object_width": "12", "object_height": "350", "object_header": "", "object_border": "1", "object_data": "{\"data\":[{\"hovertemplate\":\"DaysPastDue=0 29\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{y}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"0 29\",\"line\":{\"color\":\"#636efa\",\"dash\":\"solid\"},\"marker\":{\"symbol\":\"circle\"},\"mode\":\"lines+markers\",\"name\":\"0 29\",\"orientation\":\"v\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"xaxis\":\"x\",\"y\":[20.4,16.8,14.0,10.0,13.0,11.0],\"yaxis\":\"y\",\"type\":\"scatter\"},{\"hovertemplate\":\"DaysPastDue=30 59\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{y}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"30 59\",\"line\":{\"color\":\"#EF553B\",\"dash\":\"solid\"},\"marker\":{\"symbol\":\"circle\"},\"mode\":\"lines+markers\",\"name\":\"30 59\",\"orientation\":\"v\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"xaxis\":\"x\",\"y\":[6.0,15.0,12.0,10.8,10.8,22.0],\"yaxis\":\"y\",\"type\":\"scatter\"},{\"hovertemplate\":\"DaysPastDue=60 89\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{y}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"60 89\",\"line\":{\"color\":\"#00cc96\",\"dash\":\"solid\"},\"marker\":{\"symbol\":\"circle\"},\"mode\":\"lines+markers\",\"name\":\"60 89\",\"orientation\":\"v\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"xaxis\":\"x\",\"y\":[0.0,0.0,15.0,7.5,6.0,8.0],\"yaxis\":\"y\",\"type\":\"scatter\"}],\"layout\":{\"template\":{\"data\":{\"histogram2dcontour\":[{\"type\":\"histogram2dcontour\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"choropleth\":[{\"type\":\"choropleth\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"histogram2d\":[{\"type\":\"histogram2d\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"heatmap\":[{\"type\":\"heatmap\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"heatmapgl\":[{\"type\":\"heatmapgl\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"contourcarpet\":[{\"type\":\"contourcarpet\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"contour\":[{\"type\":\"contour\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"surface\":[{\"type\":\"surface\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"mesh3d\":[{\"type\":\"mesh3d\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"scatter\":[{\"fillpattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2},\"type\":\"scatter\"}],\"parcoords\":[{\"type\":\"parcoords\",\"line\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterpolargl\":[{\"type\":\"scatterpolargl\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"bar\":[{\"error_x\":{\"color\":\"#2a3f5f\"},\"error_y\":{\"color\":\"#2a3f5f\"},\"marker\":{\"line\":{\"color\":\"#E5ECF6\",\"width\":0.5},\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"bar\"}],\"scattergeo\":[{\"type\":\"scattergeo\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterpolar\":[{\"type\":\"scatterpolar\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"histogram\":[{\"marker\":{\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"histogram\"}],\"scattergl\":[{\"type\":\"scattergl\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatter3d\":[{\"type\":\"scatter3d\",\"line\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}},\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scattermapbox\":[{\"type\":\"scattermapbox\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterternary\":[{\"type\":\"scatterternary\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scattercarpet\":[{\"type\":\"scattercarpet\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"carpet\":[{\"aaxis\":{\"endlinecolor\":\"#2a3f5f\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"minorgridcolor\":\"white\",\"startlinecolor\":\"#2a3f5f\"},\"baxis\":{\"endlinecolor\":\"#2a3f5f\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"minorgridcolor\":\"white\",\"startlinecolor\":\"#2a3f5f\"},\"type\":\"carpet\"}],\"table\":[{\"cells\":{\"fill\":{\"color\":\"#EBF0F8\"},\"line\":{\"color\":\"white\"}},\"header\":{\"fill\":{\"color\":\"#C8D4E3\"},\"line\":{\"color\":\"white\"}},\"type\":\"table\"}],\"barpolar\":[{\"marker\":{\"line\":{\"color\":\"#E5ECF6\",\"width\":0.5},\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"barpolar\"}],\"pie\":[{\"automargin\":true,\"type\":\"pie\"}]},\"layout\":{\"autotypenumbers\":\"strict\",\"colorway\":[\"#636efa\",\"#EF553B\",\"#00cc96\",\"#ab63fa\",\"#FFA15A\",\"#19d3f3\",\"#FF6692\",\"#B6E880\",\"#FF97FF\",\"#FECB52\"],\"font\":{\"color\":\"#2a3f5f\"},\"hovermode\":\"closest\",\"hoverlabel\":{\"align\":\"left\"},\"paper_bgcolor\":\"white\",\"plot_bgcolor\":\"#E5ECF6\",\"polar\":{\"bgcolor\":\"#E5ECF6\",\"angularaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"radialaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"}},\"ternary\":{\"bgcolor\":\"#E5ECF6\",\"aaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"baxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"caxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"}},\"coloraxis\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}},\"colorscale\":{\"sequential\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]],\"sequentialminus\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]],\"diverging\":[[0,\"#8e0152\"],[0.1,\"#c51b7d\"],[0.2,\"#de77ae\"],[0.3,\"#f1b6da\"],[0.4,\"#fde0ef\"],[0.5,\"#f7f7f7\"],[0.6,\"#e6f5d0\"],[0.7,\"#b8e186\"],[0.8,\"#7fbc41\"],[0.9,\"#4d9221\"],[1,\"#276419\"]]},\"xaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\",\"title\":{\"standoff\":15},\"zerolinecolor\":\"white\",\"automargin\":true,\"zerolinewidth\":2},\"yaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\",\"title\":{\"standoff\":15},\"zerolinecolor\":\"white\",\"automargin\":true,\"zerolinewidth\":2},\"scene\":{\"xaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2},\"yaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2},\"zaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2}},\"shapedefaults\":{\"line\":{\"color\":\"#2a3f5f\"}},\"annotationdefaults\":{\"arrowcolor\":\"#2a3f5f\",\"arrowhead\":0,\"arrowwidth\":1},\"geo\":{\"bgcolor\":\"white\",\"landcolor\":\"#E5ECF6\",\"subunitcolor\":\"white\",\"showland\":true,\"showlakes\":true,\"lakecolor\":\"white\"},\"title\":{\"x\":0.05},\"mapbox\":{\"style\":\"light\"}}},\"xaxis\":{\"anchor\":\"y\",\"domain\":[0.0,1.0],\"title\":{\"text\":\"Month\"},\"dtick\":\"M1\",\"tickformat\":\"%b-%Y\",\"tickangle\":-45,\"gridcolor\":\"rgba(0,0,0,0)\"},\"yaxis\":{\"anchor\":\"x\",\"domain\":[0.0,1.0],\"title\":{\"text\":\"Roll Rate\"},\"gridcolor\":\"#e8e8e8\",\"zerolinecolor\":\"gainsboro\"},\"legend\":{\"title\":{\"text\":\"DaysPastDue\"},\"tracegroupgap\":0},\"margin\":{\"t\":60,\"l\":10,\"r\":10,\"b\":10},\"title\":{\"text\":\"Auto Loans\\u003cbr\\u003e\\u003cspan style='font-size: 12px;'\\u003e\\u003c\\u002fspan\\u003e\",\"x\":0.5,\"y\":0.95,\"xanchor\":\"center\",\"yanchor\":\"top\"},\"paper_bgcolor\":\"rgba(0,0,0,0)\",\"plot_bgcolor\":\"rgba(0,0,0,0)\"}}" }], "object_query": { "kpitreeid": 741, "searchnodes": [], "kpitype": "Aggregations", "filter1_value": [], "filter2_value": [], "filter3_value": [], "filter4_value": [], "viewby": "", "metricname": "", "groupby": "", "charttype": "line", "summary_func": "Avg", "weight_metric": "", "graph_panel_width_value": 12, "graph_width_value": 12, "graph_height_value": 350, "view_options": ["Chart Title", "Legends", "Legend-Title", "X-Axis Title", "X-Axis Labels", "Y-Axis Title", "Y-Axis Labels", "Y-Grid Lines", "Zero Line"], "legend_position": "Default", "legend_alignment": "Default", "comparetype": "", "datasource": "", "cohortname": "" }, "object_name": "Graph-1" }, { "object_type": "panel", "object_width": "12", "object_height": "0", "object_padding": "0", "object_header": "", "object_border": "0", "object_data": [{ "object_type": "table", "object_width": "12", "object_height": "400", "object_header": "", "object_border": "1", "object_data": { "table_header": ["Node", "Roll Rate", "Collection Rate", "No of Accounts", "Rolled Accounts", "Monthly Accounts", "Direct Accounts", "Indirect Accounts"], "table_data": [["Auto Loans", 13.67, 86.33, 33.33, 8.67, 66.67, 26.67, 40.0], ["Direct - High Balance Customers", 8.34, 91.66, 8.0, 2.0, 100.0, 40.0, 60.0], ["Direct - Low Balance Customers", 0.0, 33.33, 0.33, 0.0, 33.33, 13.33, 20.0], ["Direct - Medium Balance Customers", 6.67, 60.0, 5.0, 1.0, 66.67, 26.67, 40.0], ["Direct Auto Loans", 15.0, 85.0, 13.33, 3.0, 66.67, 26.67, 40.0], ["Indirect - High Balance Customers", 8.33, 58.33, 8.0, 2.0, 66.67, 26.67, 40.0], ["Indirect - Low Balance Customers", 0.0, 33.33, 1.33, 0.0, 33.33, 13.33, 20.0], ["Indirect - Medium Balance Customers", 11.46, 88.54, 10.67, 3.67, 100.0, 40.0, 60.0], ["Indirect Auto Loans", 13.61, 86.39, 20.0, 5.67, 66.67, 26.67, 40.0]], "html_data": ["&lt;table border=\"1\" class=\"table table-striped\"&gt;\n  &lt;thead&gt;\n    &lt;tr style=\"text-align: right;\"&gt;\n      &lt;th&gt;&lt;/th&gt;\n      &lt;th&gt;Node&lt;/th&gt;\n      &lt;th&gt;Roll Rate&lt;/th&gt;\n      &lt;th&gt;Collection Rate&lt;/th&gt;\n      &lt;th&gt;No of Accounts&lt;/th&gt;\n      &lt;th&gt;Rolled Accounts&lt;/th&gt;\n      &lt;th&gt;Monthly Accounts&lt;/th&gt;\n      &lt;th&gt;Direct Accounts&lt;/th&gt;\n      &lt;th&gt;Indirect Accounts&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;th&gt;0&lt;/th&gt;\n      &lt;td&gt;Auto Loans&lt;/td&gt;\n      &lt;td&gt;13.67&lt;/td&gt;\n      &lt;td&gt;86.33&lt;/td&gt;\n      &lt;td&gt;33.33&lt;/td&gt;\n      &lt;td&gt;8.67&lt;/td&gt;\n      &lt;td&gt;66.67&lt;/td&gt;\n      &lt;td&gt;26.67&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;1&lt;/th&gt;\n      &lt;td&gt;Direct - High Balance Customers&lt;/td&gt;\n      &lt;td&gt;8.34&lt;/td&gt;\n      &lt;td&gt;91.66&lt;/td&gt;\n      &lt;td&gt;8.00&lt;/td&gt;\n      &lt;td&gt;2.00&lt;/td&gt;\n      &lt;td&gt;100.00&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n      &lt;td&gt;60.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;3&lt;/th&gt;\n      &lt;td&gt;Direct - Low Balance Customers&lt;/td&gt;\n      &lt;td&gt;0.00&lt;/td&gt;\n      &lt;td&gt;33.33&lt;/td&gt;\n      &lt;td&gt;0.33&lt;/td&gt;\n      &lt;td&gt;0.00&lt;/td&gt;\n      &lt;td&gt;33.33&lt;/td&gt;\n      &lt;td&gt;13.33&lt;/td&gt;\n      &lt;td&gt;20.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;5&lt;/th&gt;\n      &lt;td&gt;Direct - Medium Balance Customers&lt;/td&gt;\n      &lt;td&gt;6.67&lt;/td&gt;\n      &lt;td&gt;60.00&lt;/td&gt;\n      &lt;td&gt;5.00&lt;/td&gt;\n      &lt;td&gt;1.00&lt;/td&gt;\n      &lt;td&gt;66.67&lt;/td&gt;\n      &lt;td&gt;26.67&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;6&lt;/th&gt;\n      &lt;td&gt;Direct Auto Loans&lt;/td&gt;\n      &lt;td&gt;15.00&lt;/td&gt;\n      &lt;td&gt;85.00&lt;/td&gt;\n      &lt;td&gt;13.33&lt;/td&gt;\n      &lt;td&gt;3.00&lt;/td&gt;\n      &lt;td&gt;66.67&lt;/td&gt;\n      &lt;td&gt;26.67&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;7&lt;/th&gt;\n      &lt;td&gt;Indirect - High Balance Customers&lt;/td&gt;\n      &lt;td&gt;8.33&lt;/td&gt;\n      &lt;td&gt;58.33&lt;/td&gt;\n      &lt;td&gt;8.00&lt;/td&gt;\n      &lt;td&gt;2.00&lt;/td&gt;\n      &lt;td&gt;66.67&lt;/td&gt;\n      &lt;td&gt;26.67&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;8&lt;/th&gt;\n      &lt;td&gt;Indirect - Low Balance Customers&lt;/td&gt;\n      &lt;td&gt;0.00&lt;/td&gt;\n      &lt;td&gt;33.33&lt;/td&gt;\n      &lt;td&gt;1.33&lt;/td&gt;\n      &lt;td&gt;0.00&lt;/td&gt;\n      &lt;td&gt;33.33&lt;/td&gt;\n      &lt;td&gt;13.33&lt;/td&gt;\n      &lt;td&gt;20.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;2&lt;/th&gt;\n      &lt;td&gt;Indirect - Medium Balance Customers&lt;/td&gt;\n      &lt;td&gt;11.46&lt;/td&gt;\n      &lt;td&gt;88.54&lt;/td&gt;\n      &lt;td&gt;10.67&lt;/td&gt;\n      &lt;td&gt;3.67&lt;/td&gt;\n      &lt;td&gt;100.00&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n      &lt;td&gt;60.00&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;4&lt;/th&gt;\n      &lt;td&gt;Indirect Auto Loans&lt;/td&gt;\n      &lt;td&gt;13.61&lt;/td&gt;\n      &lt;td&gt;86.39&lt;/td&gt;\n      &lt;td&gt;20.00&lt;/td&gt;\n      &lt;td&gt;5.67&lt;/td&gt;\n      &lt;td&gt;66.67&lt;/td&gt;\n      &lt;td&gt;26.67&lt;/td&gt;\n      &lt;td&gt;40.00&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;"] } }], "object_query": { "kpitreeid": 741, "searchnodes": [], "kpitype": "Aggregations", "cohortname": "", "filter1_value": "", "filter2_value": "", "filter3_value": "", "filter4_value": "", "viewcols": null, "metricname": [], "summary_func": "Avg", "weight_metric": "", "table_panel_width_value": 12, "table_width_value": 12, "table_height_value": 400, "table_dataformat": "", "datasource": "", "pivotcol": null, "precision": 2 }, "object_name": "Table-1" }, { "object_type": "panel", "object_width": "12", "object_height": "0", "object_padding": "0", "object_header": "", "object_border": "0", "object_data": [{ "object_type": "graph", "object_width": "12", "object_height": "350", "object_header": "", "object_border": "1", "object_data": "{\"data\":[{\"hovertemplate\":\"DaysPastDue=%{y}\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{z}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"0 29\",\"marker\":{\"color\":\"#636efa\",\"symbol\":\"circle\"},\"mode\":\"markers\",\"name\":\"0 29\",\"scene\":\"scene\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"y\":[\"0 29\",\"0 29\",\"0 29\",\"0 29\",\"0 29\",\"0 29\"],\"z\":[20.4,16.8,14.0,10.0,13.0,11.0],\"type\":\"scatter3d\"},{\"hovertemplate\":\"DaysPastDue=%{y}\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{z}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"30 59\",\"marker\":{\"color\":\"#EF553B\",\"symbol\":\"circle\"},\"mode\":\"markers\",\"name\":\"30 59\",\"scene\":\"scene\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"y\":[\"30 59\",\"30 59\",\"30 59\",\"30 59\",\"30 59\",\"30 59\"],\"z\":[6.0,15.0,12.0,10.8,10.8,22.0],\"type\":\"scatter3d\"},{\"hovertemplate\":\"DaysPastDue=%{y}\\u003cbr\\u003eMonth=%{x}\\u003cbr\\u003eRoll Rate=%{z}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e\",\"legendgroup\":\"60 89\",\"marker\":{\"color\":\"#00cc96\",\"symbol\":\"circle\"},\"mode\":\"markers\",\"name\":\"60 89\",\"scene\":\"scene\",\"showlegend\":true,\"x\":[\"2023-01\",\"2023-02\",\"2023-03\",\"2023-04\",\"2023-05\",\"2023-06\"],\"y\":[\"60 89\",\"60 89\",\"60 89\",\"60 89\",\"60 89\",\"60 89\"],\"z\":[0.0,0.0,15.0,7.5,6.0,8.0],\"type\":\"scatter3d\"}],\"layout\":{\"template\":{\"data\":{\"histogram2dcontour\":[{\"type\":\"histogram2dcontour\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"choropleth\":[{\"type\":\"choropleth\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"histogram2d\":[{\"type\":\"histogram2d\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"heatmap\":[{\"type\":\"heatmap\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"heatmapgl\":[{\"type\":\"heatmapgl\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"contourcarpet\":[{\"type\":\"contourcarpet\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"contour\":[{\"type\":\"contour\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"surface\":[{\"type\":\"surface\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"},\"colorscale\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]]}],\"mesh3d\":[{\"type\":\"mesh3d\",\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}],\"scatter\":[{\"fillpattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2},\"type\":\"scatter\"}],\"parcoords\":[{\"type\":\"parcoords\",\"line\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterpolargl\":[{\"type\":\"scatterpolargl\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"bar\":[{\"error_x\":{\"color\":\"#2a3f5f\"},\"error_y\":{\"color\":\"#2a3f5f\"},\"marker\":{\"line\":{\"color\":\"#E5ECF6\",\"width\":0.5},\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"bar\"}],\"scattergeo\":[{\"type\":\"scattergeo\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterpolar\":[{\"type\":\"scatterpolar\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"histogram\":[{\"marker\":{\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"histogram\"}],\"scattergl\":[{\"type\":\"scattergl\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatter3d\":[{\"type\":\"scatter3d\",\"line\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}},\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scattermapbox\":[{\"type\":\"scattermapbox\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scatterternary\":[{\"type\":\"scatterternary\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"scattercarpet\":[{\"type\":\"scattercarpet\",\"marker\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}}}],\"carpet\":[{\"aaxis\":{\"endlinecolor\":\"#2a3f5f\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"minorgridcolor\":\"white\",\"startlinecolor\":\"#2a3f5f\"},\"baxis\":{\"endlinecolor\":\"#2a3f5f\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"minorgridcolor\":\"white\",\"startlinecolor\":\"#2a3f5f\"},\"type\":\"carpet\"}],\"table\":[{\"cells\":{\"fill\":{\"color\":\"#EBF0F8\"},\"line\":{\"color\":\"white\"}},\"header\":{\"fill\":{\"color\":\"#C8D4E3\"},\"line\":{\"color\":\"white\"}},\"type\":\"table\"}],\"barpolar\":[{\"marker\":{\"line\":{\"color\":\"#E5ECF6\",\"width\":0.5},\"pattern\":{\"fillmode\":\"overlay\",\"size\":10,\"solidity\":0.2}},\"type\":\"barpolar\"}],\"pie\":[{\"automargin\":true,\"type\":\"pie\"}]},\"layout\":{\"autotypenumbers\":\"strict\",\"colorway\":[\"#636efa\",\"#EF553B\",\"#00cc96\",\"#ab63fa\",\"#FFA15A\",\"#19d3f3\",\"#FF6692\",\"#B6E880\",\"#FF97FF\",\"#FECB52\"],\"font\":{\"color\":\"#2a3f5f\"},\"hovermode\":\"closest\",\"hoverlabel\":{\"align\":\"left\"},\"paper_bgcolor\":\"white\",\"plot_bgcolor\":\"#E5ECF6\",\"polar\":{\"bgcolor\":\"#E5ECF6\",\"angularaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"radialaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"}},\"ternary\":{\"bgcolor\":\"#E5ECF6\",\"aaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"baxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"},\"caxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\"}},\"coloraxis\":{\"colorbar\":{\"outlinewidth\":0,\"ticks\":\"\"}},\"colorscale\":{\"sequential\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]],\"sequentialminus\":[[0.0,\"#0d0887\"],[0.1111111111111111,\"#46039f\"],[0.2222222222222222,\"#7201a8\"],[0.3333333333333333,\"#9c179e\"],[0.4444444444444444,\"#bd3786\"],[0.5555555555555556,\"#d8576b\"],[0.6666666666666666,\"#ed7953\"],[0.7777777777777778,\"#fb9f3a\"],[0.8888888888888888,\"#fdca26\"],[1.0,\"#f0f921\"]],\"diverging\":[[0,\"#8e0152\"],[0.1,\"#c51b7d\"],[0.2,\"#de77ae\"],[0.3,\"#f1b6da\"],[0.4,\"#fde0ef\"],[0.5,\"#f7f7f7\"],[0.6,\"#e6f5d0\"],[0.7,\"#b8e186\"],[0.8,\"#7fbc41\"],[0.9,\"#4d9221\"],[1,\"#276419\"]]},\"xaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\",\"title\":{\"standoff\":15},\"zerolinecolor\":\"white\",\"automargin\":true,\"zerolinewidth\":2},\"yaxis\":{\"gridcolor\":\"white\",\"linecolor\":\"white\",\"ticks\":\"\",\"title\":{\"standoff\":15},\"zerolinecolor\":\"white\",\"automargin\":true,\"zerolinewidth\":2},\"scene\":{\"xaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2},\"yaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2},\"zaxis\":{\"backgroundcolor\":\"#E5ECF6\",\"gridcolor\":\"white\",\"linecolor\":\"white\",\"showbackground\":true,\"ticks\":\"\",\"zerolinecolor\":\"white\",\"gridwidth\":2}},\"shapedefaults\":{\"line\":{\"color\":\"#2a3f5f\"}},\"annotationdefaults\":{\"arrowcolor\":\"#2a3f5f\",\"arrowhead\":0,\"arrowwidth\":1},\"geo\":{\"bgcolor\":\"white\",\"landcolor\":\"#E5ECF6\",\"subunitcolor\":\"white\",\"showland\":true,\"showlakes\":true,\"lakecolor\":\"white\"},\"title\":{\"x\":0.05},\"mapbox\":{\"style\":\"light\"}}},\"scene\":{\"domain\":{\"x\":[0.0,1.0],\"y\":[0.0,1.0]},\"xaxis\":{\"title\":{\"text\":\"Month\"}},\"yaxis\":{\"title\":{\"text\":\"DaysPastDue\"},\"categoryorder\":\"array\",\"categoryarray\":[\"0 29\",\"30 59\",\"60 89\"]},\"zaxis\":{\"title\":{\"text\":\"Roll Rate\"}}},\"legend\":{\"title\":{\"text\":\"DaysPastDue\"},\"tracegroupgap\":0},\"margin\":{\"t\":50,\"l\":80,\"r\":30,\"b\":20},\"title\":{\"text\":\"Auto Loans\\u003cbr\\u003e\\u003cspan style='font-size: 12px;'\\u003e\\u003c\\u002fspan\\u003e\",\"x\":0.5,\"xanchor\":\"center\"},\"paper_bgcolor\":\"rgba(0,0,0,0)\",\"plot_bgcolor\":\"rgba(0,0,0,0)\",\"yaxis\":{\"gridcolor\":\"#e8e8e8\",\"zerolinecolor\":\"gray\"}}}" }], "object_query": { "kpitreeid": 741, "searchnodes": "", "kpitype": "Aggregations", "cohortname": "", "filter1_value": "", "filter2_value": "", "filter3_value": "", "filter4_value": "", "viewby": "Month", "metricname": "Roll Rate", "groupby": "DaysPastDue", "charttype": "scatter", "summary_func": "Avg", "weight_metric": "", "graph_panel_width_value": 12, "graph_width_value": 12, "graph_height_value": 350, "datasource": "" }, "object_name": "Graph3D-1" }]</span>
+&nbsp;
+const PlotlyViewer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+    function <span class="fstat-no" title="function not covered" >getColWidth(</span>pw, cw) {
+<span class="cstat-no" title="statement not covered" >        cw = cw &gt; pw ? pw : cw;</span>
+<span class="cstat-no" title="statement not covered" >        cw = Math.round(cw * 12.0 / pw);</span>
+<span class="cstat-no" title="statement not covered" >        return cw;</span>
+    }
+&nbsp;
+    const renderContent = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(c</span>ardObj, panelWidth, panelHeader, idx) =&gt; {</span>
+        const subObjType = <span class="cstat-no" title="statement not covered" >cardObj["object_type"];</span>
+        const objectStyle = <span class="cstat-no" title="statement not covered" >cardObj['object_style'] || {};</span>
+        const cardWidth = <span class="cstat-no" title="statement not covered" >getColWidth(panelWidth, parseInt(cardObj['object_width']));</span>
+        const cardHeight = <span class="cstat-no" title="statement not covered" >`${parseInt(cardObj['object_height'])}px`;</span>
+        const itemHeader = <span class="cstat-no" title="statement not covered" >cardObj["object_header"] || "";</span>
+        const itemBorder = <span class="cstat-no" title="statement not covered" >cardObj["object_border"] || "1";</span>
+        const textAlign = <span class="cstat-no" title="statement not covered" >objectStyle["text_align"] || "Center";</span>
+&nbsp;
+        const componentProps = <span class="cstat-no" title="statement not covered" >{</span>
+            cardWidth,
+            cardHeight,
+            itemBorder,
+            textAlign,
+            itemHeader,
+            cardObj,
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        switch (subObjType) {</span>
+            case "card": <span class="cstat-no" title="statement not covered" >return &lt;Card {...componentProps} /&gt;;</span>
+            case "text": <span class="cstat-no" title="statement not covered" >return &lt;TextCard {...componentProps} /&gt;;</span>
+            case "graph": <span class="cstat-no" title="statement not covered" >return &lt;PlotlyGraph {...componentProps} graphId={`graph-${idx}`} /&gt;;</span>
+            case "table": <span class="cstat-no" title="statement not covered" >return &lt;TableCard {...componentProps} /&gt;;</span>
+            default: <span class="cstat-no" title="statement not covered" >return null;</span>
+        }
+    };
+&nbsp;
+    const renderPanels = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return pinnedObjects.map(<span class="fstat-no" title="function not covered" >(p</span>anelObj, i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (panelObj["object_type"] === "panel") {</span>
+                const panelData = <span class="cstat-no" title="statement not covered" >panelObj['object_data'];</span>
+                const panelHeader = <span class="cstat-no" title="statement not covered" >panelObj["object_header"] || "";</span>
+                const panelPadding = <span class="cstat-no" title="statement not covered" >panelObj["object_padding"] || "0";</span>
+                const panelBorder = <span class="cstat-no" title="statement not covered" >panelObj["object_border"] || "0";</span>
+                const panelWidth = <span class="cstat-no" title="statement not covered" >parseInt(panelObj['object_width']);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return (</span>
+                    &lt;div key={i} className={`col-${panelWidth} p-${panelPadding}`} style={{ breakInside: 'avoid' }}&gt;
+                        &lt;div className={`card p-0 bg-transparent border-${panelBorder}`}&gt;
+                            &lt;div className="card-body p-0"&gt;
+                                {panelHeader &amp;&amp; &lt;div className="h5 p-2" style={{ color: '#043365' }}&gt;{panelHeader}&lt;/div&gt;}
+                                &lt;div className="row pr-3 pl-3"&gt;
+                                    {panelData.map(<span class="fstat-no" title="function not covered" >(c</span>ardObj, j) =&gt; <span class="cstat-no" title="statement not covered" >renderContent(cardObj, panelWidth, panelHeader, i))</span>}
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                );
+            }
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        });
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return (</span>
+        &lt;div className='pt-3 pb-3 d-flex justify-content-center'&gt;
+            &lt;div id="graphcontainer" className="row m-0 p-3" style={{ width: '80%' }}&gt;
+                {pinnedObjects.length &gt; 0 ? renderPanels() : (
+                    &lt;div className="col-sm-12 h4 text-center text-danger"&gt;No Dashboard Data Available !!!&lt;/div&gt;
+                )}
+            &lt;/div&gt;
+        &lt;/div&gt;
+    );
+};
+&nbsp;
+&nbsp;
+export default PlotlyViewer</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2024-09-12T13:18:08.255Z
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    
